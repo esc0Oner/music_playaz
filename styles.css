@@ -172,4 +172,15 @@ estilos
     flex: 1;
 }
 
+.container-duracion{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#duracion-slider{
+    width: 100%;
+    margin: 0rem 1rem 0rem  1rem;
+
+}
 /*INTERFAZ LISTA*/
