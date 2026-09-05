@@ -1,0 +1,102 @@
+const song_title=document.querySelector('.reproductor h1');
+const artist=document.querySelector('.reproductor p');
+
+const duracion=document.getElementById('duracion');
+const song=document.getElementById('cancion');
+
+const control=document.getElementById('ctrl');
+const repausar=document.querySelector('.botones button.btn-inicio-pausa');
+
+
+const rewind=document.querySelector('.botones button.atras');
+const forward=document.querySelector('.botones button.siguiente');
+
+const carpetas=document.getElementById('carpetas_input');
+const carpetas_post=document.getElementById('cargar_btn');
+const carpetas_get=document.getElementById('carpeta_estado');
+
+
+//canciones
+
+const songs=[
+    {
+        titulo:'American Beauty',
+        nombre:'Cormega',
+        fuente:'music/02. Cormega - American Beauty.flac'
+    },
+    {
+        titulo:'Pimp In My Own Rhyme',
+        nombre:'8Ball & MJG',
+        fuente:'music/02. Pimp In My Own Rhyme.mp3'
+    },
+    {
+        titulo:'Gunn Clapp',
+        nombre:'O.G.C',
+        fuente:'music/05. Gunn Clapp.mp3'
+    },
+    {
+        titulo:'Venetian Loafers',
+        nombre:'Meyhem Lauren',
+        fuente:'music/5. Meyhem Lauren - Venetian Loafers.flac'
+    },
+    {
+        titulo:'Shootouts',
+        nombre:'Nas',
+        fuente:'music/12. Shootouts.mp3'
+    }
+];
+
+let indiceActual= 0;
+
+function cargarSong() {
+    song_title.textContent = songs[indiceActual].titulo;
+    artist.textContent = songs[indiceActual].nombre;
+    song.src=songs[indiceActual].fuente;
+    song.onload();
+};
+
+repausar.addEventListener("click", stop_n_play);
+
+function stop_n_play() {
+    if (song.paused) {
+        reproducir();
+    }else{
+        pausar();
+    }
+}
+
+
+function reproducir() {
+    song.play();
+    control.classList.add('bi-pause-circle-fill')
+    control.classList.remove('bi-play-circle-fill')
+}
+
+function pausar() {
+    song.pause();
+    control.classList.remove('bi-pause-circle-fill')
+    control.classList.add('bi-play-circle-fill')
+}
+
+song.addEventListener('timeupdate', function (){
+    if (song.paused) {
+        duracion.value=song.currentTime;
+    }
+
+});
+
+//funcion(){} == ()=>{}
+
+duracion.addEventListener('input',function(){
+    song.currentTime=duracion.value;
+});
+
+duracion.addEventListener('change',function(){
+    reproducir();
+});
+
+
+
+//actualizarInfoSong();
+
+//console.log(song_title);

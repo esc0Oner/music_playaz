@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player</title>
+    <!--Referencio la clase de estilos al esqueleto del programa-->
+    <link rel="stylesheet" href="styles.css">
+    <link>
+</head>
+<body>
+    
+    <section class="reproductor">
+        <h1>Titulo</h1>
+        <p>Name</p>
+        <audio id="cancion">
+            <!--ruta de archivo de audio-->
+            <!--<source src="music/02. Pimp In My Own Rhyme.mp3" type="audio/mpeg"/>-->
+            <source src="music/02. Cormega - American Beauty.flac" type="audio/flac"/>
+
+        </audio>
+
+        <input type="range" value="0" id="duracion"/>
+        <div class="botones">
+            <button class="atras ctrl">
+                <i class="bi bi-rewind"></i><!--rewind-->
+            </button>
+            <button class="btn-inicio-pausa ctrl">
+                <i class="bi-play-circle-fill" id="ctrl"></i><!--inicio-->
+            </button>
+            <button class="siguiente ctrl">
+                <i class="bi-fast-forward"></i><!--next-->
+            </button>
+        </div>
+            <div><!--Boton de 'Agregar carpetas'-->
+            <div class="carpetas-bar">
+                <button id="cargar_btn" >Seleccione..📁📁
+                <input type="file" id="carpetas_input" webkitdirectory directory multiple hidden>
+                </button>
+            <span id="carpeta_estado">No hay carpetas...</span>
+            </div>
+
+            <!--slider de volumen-->
+            <div class="volumen">
+                <span>🔊🔊</span>
+                <input type="range" id="slider" min="0" max="1" step="0.01" value="1">
+            </div>
+
+            <ul id="playlist" class="playlist"></ul></div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>

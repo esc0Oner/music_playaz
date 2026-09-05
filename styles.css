@@ -1,0 +1,175 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+:root{
+    /*DEFINO VARIABLES CON DOBLE 'GUION'*/
+    --azul:rgba(0,0,255,.8)
+    --blanco:rgba(0,0,255,.2)
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Black Ops One", system-ui;
+}
+
+body{
+
+    display: flex;
+    justify-content: center;
+    /*view**height*/
+    min-height: 100vh;
+    align-items: center;
+    width: 100;
+
+    background: url(IMG/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+body::before{
+    content: '';
+    position: absolute;
+    background-color: rgba(0,0,0,0.4);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+body > *{
+    position: relative;
+    z-index: 2;
+}
+
+/*las clases inician con un .adelante para los
+estilos
+*/
+
+.reproductor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--azul);
+    width: 390px;
+    padding: 10px 40px;
+    border-radius: 20px;
+    background-color: darkslategrey;
+
+}
+
+.reproductor h1{
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+
+}
+
+.reproductor p{
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.7;
+
+}
+
+/*CUANDO QUIERO MODIFICAR ESTILOS DE UN ID DE UNA ETIQUETA TENGO QUE USAR EL #*/
+
+#duracion{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 7px;
+    background: rgba(165,165,165,0.4);
+    border-radius: 4px;
+    margin: 32px 0 24px;
+    cursor: pointer;
+
+}
+
+#duracion::-webkit-slider-thumb{
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(165, 165, 165, 0.10);
+    width: 16px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    outline: 4px solid var(--azul);
+    box-shadow: 0 6px 10px rgba(185, 184, 184, 0.3);
+
+}
+
+#cargar_btn{
+    background-color: rgba(0,0,255,.8);
+    color:var(--azul);
+    border:none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.5s linear;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+
+}
+
+.botones button{
+
+    width: 60px;
+    aspect-ratio: 1/1;  /*1 a 1 para que se vean como cuadrado*/
+    margin: 20px;
+    background: rgba(165, 165, 165, 0.3);
+    color: var(--blanco);
+    border-radius: 50%;  /*50% para que se vean redondos*/
+    border: 1px solid var(--blanco);
+    outline: 0;
+    font-size: 1.8rem;
+    box-shadow: 0 6px 10px rgba(185, 184, 184, 0.3);
+    cursor: pointer;
+    transition: all 0.2s linear;  /*Transicion en segundos para cuando el raton este sobre el*/
+}
+
+.botones .ctrl:hover{
+    transform: scale(1.2);
+}
+
+.carpetas-bar{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    gap:8px ;
+}
+
+#cargar_btn{
+    background:slategrey;
+    color:darkgrey;
+    border:none;
+    padding: 10px 16px;
+    border-radius: 40%;
+    font-size: 14px;
+    transition: background 0.3;;
+    
+}
+
+#cargar_btn:hover{
+    background-color: brown;
+}
+
+.volumen{
+    display: flex;
+    align-items: center;
+    gap: 10;
+    margin-bottom: 10px;
+}
+
+.volumen input{
+    flex: 1;
+}
+
+/*INTERFAZ LISTA*/
