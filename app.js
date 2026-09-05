@@ -1,7 +1,9 @@
 const song_title=document.querySelector('.reproductor h1');
 const artist=document.querySelector('.reproductor p');
 
-const duracion=document.getElementById('duracion');
+const duracionSlider=document.getElementById('duracion-slider');
+const duracion_actual= document.getElementById("duracion-actual")
+const duracion_total= document.getElementById("duracion-song")
 const song=document.getElementById('cancion');
 
 const control=document.getElementById('ctrl');
@@ -46,13 +48,25 @@ const songs=[
     }
 ];
 
+function formatTime(seconds) {
+    if (!isFinite(seconds)) return '0:00';
+    const m = Math.floor(seconds / 60);
+    const s = Math.floor(seconds % 60).toString().padStart(2, '0');
+    return `${m}:${s}`;
+}
+
 let indiceActual= 0;
 
 function cargarSong() {
-    song_title.textContent = songs[indiceActual].titulo;
     artist.textContent = songs[indiceActual].nombre;
-    song.src=songs[indiceActual].fuente;
-    song.onload();
+    const item=songs[indiceActual];
+    song.src=item.fuente;
+    song_title.textContent = item.titulo;
+    song.load();
+
+    if (autoplay) {
+        song.play();
+    }
 };
 
 repausar.addEventListener("click", stop_n_play);
@@ -79,11 +93,17 @@ function pausar() {
 }
 
 song.addEventListener('timeupdate', function (){
-    if (song.paused) {
-        duracion.value=song.currentTime;
-    }
+    duracionSlider.value=song.currentTime;
+    duracion_actual.textContent = formatTime(duracionSlider.value)
 
 });
+
+song.addEventListener('loadedmetadata', ()=>{
+    duracionSlider.max=song.duracion;
+    duracion_total.textContent=formatTime(song.duracion);
+});
+
+song.add
 
 //funcion(){} == ()=>{}
 
