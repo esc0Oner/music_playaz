@@ -48,6 +48,9 @@ const songs=[
     }
 ];
 
+let indiceActual= 4;
+
+
 function formatTime(seconds) {
     if (!isFinite(seconds)) return '0:00';
     const m = Math.floor(seconds / 60);
@@ -55,7 +58,6 @@ function formatTime(seconds) {
     return `${m}:${s}`;
 }
 
-let indiceActual= 0;
 
 function cargarSong() {
     artist.textContent = songs[indiceActual].nombre;
@@ -99,22 +101,20 @@ song.addEventListener('timeupdate', function (){
 });
 
 song.addEventListener('loadedmetadata', ()=>{
-    duracionSlider.max=song.duracion;
-    duracion_total.textContent=formatTime(song.duracion);
+    duracionSlider.max=song.duration;
+    duracion_total.textContent=formatTime(song.duration);
 });
 
-song.add
 
 //funcion(){} == ()=>{}
 
-duracion.addEventListener('input',function(){
-    song.currentTime=duracion.value;
+duracionSlider.addEventListener('input',()=>{
+    song.currentTime=duracionSlider.value;
 });
 
-duracion.addEventListener('change',function(){
+duracionSlider.addEventListener('change',function(){
     reproducir();
 });
-
 
 
 //actualizarInfoSong();
