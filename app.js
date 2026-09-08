@@ -51,7 +51,6 @@ const songs=[
 
 let indiceActual= 4;
 
-
 function formatTime(seconds) {
     if (!isFinite(seconds)) return '0:00';
     const m = Math.floor(seconds / 60);
@@ -71,9 +70,13 @@ function cargarSong() {
 
 cargarSong();
 
-function actualizarInfoSong(){
-    
-}
+function actualizarInfoSong(indiceActual){
+    titulo.textContent=songs[indiceActual].titulo;
+    artist.textContent=songs[indiceActual].nombre;
+    song.src=songs[indiceActual].fuente;
+};
+
+song.addEventListener('loadeddata', forward);
 
 repausar.addEventListener("click", stop_n_play);
 
@@ -118,6 +121,18 @@ duracionSlider.addEventListener('input',()=>{
 
 duracionSlider.addEventListener('change',function(){
     reproducir();
+});
+
+forward.addEventListener('click', ()=>{
+    indiceActual=(indiceActual+1) % songs.length;
+    actualizarInfoSong();
+    reproducir();
+});
+
+rewind.addEventListener('click', function(){
+    indiceActual=(indiceActual- 1 + songs.length) % songs.length;
+    actualizarInfoSong();
+    console.log(song);
 });
 
 

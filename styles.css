@@ -183,4 +183,8 @@ estilos
     margin: 0rem 1rem 0rem  1rem;
 
 }
+
+.filtered-svg-icon{
+    filter: invert(53%) sepia(88%) saturate(2815%) hue-rotate(186deg) brightness(94%) contrast(92%);
+}
 /*INTERFAZ LISTA*/
