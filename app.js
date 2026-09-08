@@ -48,7 +48,7 @@ const songs=[
     }
 ];
 
-let indiceActual= 4;
+let indiceActual= 3;
 
 
 function formatTime(seconds) {
@@ -66,10 +66,9 @@ function cargarSong() {
     song_title.textContent = item.titulo;
     song.load();
 
-    if (autoplay) {
-        song.play();
-    }
 };
+
+cargarSong();
 
 repausar.addEventListener("click", stop_n_play);
 
