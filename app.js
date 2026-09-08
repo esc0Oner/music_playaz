@@ -17,6 +17,7 @@ const carpetas=document.getElementById('carpetas_input');
 const carpetas_post=document.getElementById('cargar_btn');
 const carpetas_get=document.getElementById('carpeta_estado');
 
+//const autoplay=false;
 
 //canciones
 
@@ -69,6 +70,10 @@ function cargarSong() {
 };
 
 cargarSong();
+
+function actualizarInfoSong(){
+    
+}
 
 repausar.addEventListener("click", stop_n_play);
 
