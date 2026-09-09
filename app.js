@@ -49,7 +49,7 @@ const songs=[
     }
 ];
 
-let indiceActual= 4;
+let indiceActual= 0;
 
 function formatTime(seconds) {
     if (!isFinite(seconds)) return '0:00';
@@ -70,13 +70,13 @@ function cargarSong() {
 
 cargarSong();
 
-function actualizarInfoSong(indiceActual){
-    titulo.textContent=songs[indiceActual].titulo;
+function actualizarInfoSong(){
+    song_title.textContent=songs[indiceActual].titulo;
     artist.textContent=songs[indiceActual].nombre;
     song.src=songs[indiceActual].fuente;
+    song.addEventListener('loadeddata', function(){});
 };
 
-song.addEventListener('loadeddata', forward);
 
 repausar.addEventListener("click", stop_n_play);
 
@@ -130,12 +130,12 @@ forward.addEventListener('click', ()=>{
 });
 
 rewind.addEventListener('click', function(){
-    indiceActual=(indiceActual- 1 + songs.length) % songs.length;
+    indiceActual=(indiceActual - 1 + songs.length) % songs.length;
     actualizarInfoSong();
-    console.log(song);
+    reproducir();
 });
 
 
-//actualizarInfoSong();
+actualizarInfoSong();
 
 //console.log(song_title);
