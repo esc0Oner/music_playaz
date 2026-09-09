@@ -71,7 +71,7 @@ function cargarSong() {
 cargarSong();
 
 function actualizarInfoSong(){
-    titulo.textContent=songs[indiceActual].titulo;
+    song_title.textContent=songs[indiceActual].titulo;
     artist.textContent=songs[indiceActual].nombre;
     song.src=songs[indiceActual].fuente;
     song.addEventListener('loadeddata', function(){});
