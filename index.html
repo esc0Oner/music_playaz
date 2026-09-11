@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<link>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player</title>
     <!--Referencio la clase de estilos al esqueleto del programa-->
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="IMG/usb-drive-fill.svg" id="icon">
-    <img src="IMG/usb-drive-fill.svg" alt="icon" class="filtered-svg-icon">
+    <link rel="icon" href="IMG/usb-drive-fill.svg" id="icon"
+    img src="IMG/usb-drive-fill.svg" alt="icon" class="filtered-svg-icon">
 </head>
 <body>
     
@@ -16,9 +16,10 @@
         <p>Name</p>
         <audio id="cancion">
             <!--ruta de archivo de audio-->
-            <source src="music/5. Meyhem Lauren - Venetian Loafers.flac" type="audio/flac"/>
-            <source src="music/02. Pimp In My Own Rhyme.mp3" type="audio/mpeg"/>
-            <source src="music/02. Cormega - American Beauty.flac" type="audio/flac"/>
+            <source src="" type="audio/mpeg"/>
+            <!--<source src="music/5. Meyhem Lauren - Venetian Loafers.flac" type="audio/flac"/>-->
+            <!--<source src="music/02. Pimp In My Own Rhyme.mp3" type="audio/mpeg"/>-->
+            <!--<source src="music/02. Cormega - American Beauty.flac" type="audio/flac"/>-->
 
         </audio>
         <div class="container-duracion">
@@ -48,7 +49,7 @@
             <!--slider de volumen-->
             <div class="volumen">
                 <span>🔊</span>
-                <input type="range" id="slider" min="0" max="1" step="0.01" value="1">
+                <input type="range" id="volumen-slider" min="0" max="1" step="0.01" value="1">
             </div>
 
             <ul id="playlist" class="playlist"></ul></div>
