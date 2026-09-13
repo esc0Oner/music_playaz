@@ -141,6 +141,13 @@ volumenSlider.addEventListener('input', ()=>{
     song.volume=volumenSlider.value;
 });
 
+song.addEventListener('ended', ()=>{
+    indiceActual=(indiceActual + 1 ) % songs.length;
+    actualizarInfoSong();
+    reproducir();
+});
+
+
 
 actualizarInfoSong();
 
