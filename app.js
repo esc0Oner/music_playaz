@@ -13,6 +13,8 @@ const repausar=document.querySelector('.botones button.btn-inicio-pausa');
 const rewind=document.querySelector('.botones button.atras');
 const forward=document.querySelector('.botones button.siguiente');
 
+const volumenSlider=document.getElementById('volumen-slider');
+
 const carpetas=document.getElementById('carpetas_input');
 const carpetas_post=document.getElementById('cargar_btn');
 const carpetas_get=document.getElementById('carpeta_estado');
@@ -133,6 +135,10 @@ rewind.addEventListener('click', function(){
     indiceActual=(indiceActual - 1 + songs.length) % songs.length;
     actualizarInfoSong();
     reproducir();
+});
+
+volumenSlider.addEventListener('input', ()=>{
+    song.volume=volumenSlider.value;
 });
 
 song.addEventListener('ended', ()=>{
