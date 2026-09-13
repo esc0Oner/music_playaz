@@ -135,6 +135,13 @@ rewind.addEventListener('click', function(){
     reproducir();
 });
 
+song.addEventListener('ended', ()=>{
+    indiceActual=(indiceActual + 1 ) % songs.length;
+    actualizarInfoSong();
+    reproducir();
+});
+
+
 
 actualizarInfoSong();
 
