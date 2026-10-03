@@ -13,13 +13,13 @@
     
     <section class="reproductor">
         <!--botones nuevos-->
-        <div>
+        <div class="imagen-selecta">
+            <div>
             <button id="cargar-background">
-                <input type="file" name="" id="cargar-background"> 
+                <input type="file" id="cargar-background" multiple accept="image/*">
                 <span id="cargar-background-estado"></span>
             </button>
-        </div>
-        <div>
+            </div>
         </div>
 
         <h1>Titulo</h1>
@@ -49,10 +49,10 @@
                 <i class="bi-fast-forward"></i><!--next-->
             </button>
         </div>
-            <div><!--Boton de 'Agregar carpetas'-->
+            <div class="archivos-selecta"><!--Boton de 'Agregar carpetas'-->
             <div class="carpetas-bar">
                 <button id="cargar_btn" >Seleccione..📁
-                <input type="file" id="carpetas_input" webkitdirectory directory multiple hidden>
+                <input type="file" id="carpetas_input" webkitdirectory hidden accept="audio/*">
                 </button>
             <span id="carpeta_estado">No hay carpetas...</span>
             </div>
