@@ -147,6 +147,9 @@ song.addEventListener('ended', ()=>{
     reproducir();
 });
 
+carpetas_post.addEventListener('click',()=>{
+    carpetas.click();
+})
 
 
 actualizarInfoSong();
