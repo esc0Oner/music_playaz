@@ -161,6 +161,10 @@ estilos
     background-color: brown;
 }
 
+#cargar_btn:active{
+    background-color: green;
+}
+
 .volumen{
     display: flex;
     align-items: center;
@@ -188,4 +192,7 @@ estilos
     fill: #001bff;
 }
 
+.carpetas-bar input{
+    display:none
+}
 /*INTERFAZ LISTA*/
