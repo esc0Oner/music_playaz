@@ -149,7 +149,7 @@ song.addEventListener('ended', ()=>{
 
 carpetas_post.addEventListener('click',()=>{
     carpetas.click();
-})
+});
 
 
 actualizarInfoSong();
